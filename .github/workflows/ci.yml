@@ -32,7 +32,15 @@ jobs:
       - name: Install testing framework
         run: |
           pip install pytest
-
+      - name: Debug runner
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 2 -type f
+          python --version
+          python -c "import os; print(os.getcwd())"
+          python -c "import sys; print(sys.path)"
+          python -c "import app; print(app)"
       # run tests
       - name: Run tests
         run: |
